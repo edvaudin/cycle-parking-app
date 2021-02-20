@@ -11,3 +11,96 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1{
+  float: left;
+  line-height: 70px;
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  margin-left: 100px;
+  color: #ffffff;
+}
+
+h2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: auto;
+  font-family: 'Sora', sans-serif;
+  margin-left: 50px;
+}
+
+h3 {
+  padding-top: 10px;
+  margin: auto;
+  font-family: 'Sora', sans-serif;
+  margin-left: 100px;
+}
+header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(0.25turn, #3f87a6, #135899);
+}
+
+.useClassList{
+  width: 80%;
+  height: 50px;
+  margin: auto;
+  margin-left: 50px;
+  font-size: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: #2b78c0;
+  border: none;
+  border-bottom: 2px solid #1d408a;
+  color: white;
+  padding: 10px;
+  padding-right: 38px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* Adding transition effect */
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+select:hover,
+select:focus {
+  color: #2b78c0;
+  background-color: white;
+  border-bottom-color: #DCDCDC;
+}
+
+button{
+  height: 25px;
+  margin: auto;
+  margin-left: 50px;
+  font-size: 100%;
+  font-weight: bold;
+  background-color: #2b78c0;
+  border: none;
+  border-bottom: 2px solid #1d408a;
+  color: white;
+}
+
+input {
+  height: 25px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  font-size: 100%;
+}
+ul {
+  width: fit-content;
+  color: white;
+  margin-left: 50px;
+  font-family: 'Sora', sans-serif;
+  background: #2b78c0;
+}
+p {
+  padding-top: 20px;
+  margin: auto;
+  font-family: 'Sora', sans-serif;
+  margin-left: 50px;
+}
