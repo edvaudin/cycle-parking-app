@@ -1,9 +1,10 @@
 import React, { FC, useState, ChangeEvent, FormEvent } from 'react'
+import { UseClass } from '../types'
 import {useClassList, reqDescriptions} from './data'
 
-export const Form: FC = () => {
+export const Form = () => {
     const [selectedUseClass, setSelectedUseClass] = useState(0)
-    const [parameterValue, setParameterValue] = useState("")
+    const [parameterValue, setParameterValue] = useState({useClass:"",requirements:{} as {[name:string]:string}})
 
     const renderedUseClassList = useClassList.map((useClass, index) => {
         return (
@@ -14,17 +15,13 @@ export const Form: FC = () => {
     })
 
     const handleSelect = (e : ChangeEvent<HTMLSelectElement>) => {
-        setSelectedUseClass(e.target.selectedIndex)
-    }
-
-    const handleInput = (e : ChangeEvent<HTMLInputElement>) => {
-        setParameterValue({[e.target.name]: e.currentTarget.value} as any)
-
-        
-    }
+        var selectedUseClass = e.target.selectedIndex;
+        setSelectedUseClass(selectedUseClass);
+        setParameterValue(prevUseClass => { prevUseClass.useClass = useClassList[selectedUseClass].description; return JSON.parse(JSON.stringify(prevUseClass)); ; });
+    };
 
     const handleSubmit = () => {
-
+        localStorage.setItem("useClass", JSON.stringify(parameterValue));
     }
 
     return (
@@ -39,16 +36,23 @@ export const Form: FC = () => {
                             return (
                                 <input 
                                     type="text" 
+                                    style={{width:"500px"}}
                                     key={index} 
                                     name={index.toString()}
                                     placeholder={reqDescriptions[requirement]} 
-                                    value={parameterValue || ''} 
-                                    onChange={handleInput}
+                                    value={parameterValue.requirements[requirement] || ""}
+                                    onChange={(e) => { 
+                                        setParameterValue(prevUseClass => { 
+                                            prevUseClass.requirements[requirement] = e.target.value; 
+                                            return JSON.parse(JSON.stringify(prevUseClass)); 
+                                        });
+                                    }}
                                 />
                             )
                         })}
                     <br />
                     <button>Add land-use</button>
+                    <div>{JSON.stringify(parameterValue)}</div>
                 </form>
         </div>
     )

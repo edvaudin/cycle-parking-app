@@ -1,7 +1,7 @@
 import React, { useReducer, useState } from 'react'
 import useClassList from './useClassList'
 
-class Calculator extends React.Component {
+class OldForm extends React.Component {
     constructor() {
         super();
         
@@ -114,4 +114,4 @@ class Calculator extends React.Component {
     }
 }
 
-export default Calculator
+export default OldForm

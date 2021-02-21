@@ -6,13 +6,15 @@ export const useClassList : UseClass[] = [
         requirements: [
             "BEDROOMS",
             "LOCATION"
-        ]
+        ],
+        requiredInputs:{}
     },
     {
         description: "use class 2",
         requirements: [
             "BEDROOMS"
-        ]
+        ],
+        requiredInputs:{}
     }
 ]
 
