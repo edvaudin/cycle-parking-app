@@ -39,20 +39,24 @@ export const Form = () => {
                     <br />
                         {useClassList[selectedUseClass].requirements.map((requirement, index) => {
                             return (
-                                <input 
-                                    type="number" 
-                                    style={{width:"500px"}}
-                                    key={index} 
-                                    name={index.toString()}
-                                    placeholder={reqDescriptions[requirement]} 
-                                    value={parameterValue.requirements[requirement] || ""}
-                                    onChange={(e) => { 
+                                <div>
+                                    <label key={index}>{reqDescriptions[requirement]}</label>
+                                    <input 
+                                        type="number" 
+                                        style={{width:"500px"}}
+                                        key={index} 
+                                        name={index.toString()}
+                                        placeholder={reqDescriptions[requirement]} 
+                                        value={parameterValue.requirements[requirement] || ""}
+                                        onChange={(e) => { 
                                         setParameterValue(prevUseClass => { 
-                                            prevUseClass.requirements[requirement] = e.target.value; 
-                                            return JSON.parse(JSON.stringify(prevUseClass)); 
-                                        });
-                                    }}
-                                />
+                                        prevUseClass.requirements[requirement] = e.target.value; 
+                                        return JSON.parse(JSON.stringify(prevUseClass)); 
+                                         });
+                                        }}
+                                    />
+                                </div>
+                                
                             )
                         })}
                     <br />
