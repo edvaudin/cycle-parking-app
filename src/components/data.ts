@@ -19,7 +19,7 @@ export const useClassList : UseClass[] = [
 ]
 
 export const reqDescriptions = {
-    BEDROOMS : "bedroom description",
-    LOCATION : "location description",
-    GROSS_EXTERN_AREA : "gross extern area description"
+    BEDROOMS : "Number of bedrooms",
+    LOCATION : "Is it in central London?",
+    GROSS_EXTERN_AREA : "Gross External Area"
 }

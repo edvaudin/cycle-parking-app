@@ -1,5 +1,6 @@
 import React, { FC, useState, ChangeEvent, FormEvent } from 'react'
 import { UseClass } from '../types'
+import Calculator from './Calculator'
 import {useClassList, reqDescriptions} from './data'
 
 export const Form = () => {
@@ -17,10 +18,14 @@ export const Form = () => {
     const handleSelect = (e : ChangeEvent<HTMLSelectElement>) => {
         var selectedUseClass = e.target.selectedIndex;
         setSelectedUseClass(selectedUseClass);
-        setParameterValue(prevUseClass => { prevUseClass.useClass = useClassList[selectedUseClass].description; return JSON.parse(JSON.stringify(prevUseClass)); ; });
+        setParameterValue(prevUseClass => { 
+            prevUseClass.useClass = useClassList[selectedUseClass].description; 
+            return JSON.parse(JSON.stringify(prevUseClass)); ; 
+        });
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = (e : ChangeEvent<HTMLFormElement>) => {
+        e.preventDefault();
         localStorage.setItem("useClass", JSON.stringify(parameterValue));
     }
 
@@ -35,7 +40,7 @@ export const Form = () => {
                         {useClassList[selectedUseClass].requirements.map((requirement, index) => {
                             return (
                                 <input 
-                                    type="text" 
+                                    type="number" 
                                     style={{width:"500px"}}
                                     key={index} 
                                     name={index.toString()}
@@ -52,8 +57,8 @@ export const Form = () => {
                         })}
                     <br />
                     <button>Add land-use</button>
-                    <div>{JSON.stringify(parameterValue)}</div>
                 </form>
+                <Calculator useClass={parameterValue}/>
         </div>
     )
 }
