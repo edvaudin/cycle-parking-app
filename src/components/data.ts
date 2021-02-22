@@ -2,18 +2,29 @@ import { UseClass } from '../types'
 
 export const useClassList : UseClass[] = [
     {
+        description: "Food retail",
+        requirements: [
+            "GROSS_EXTERN_AREA",
+            "LOCATION"
+        ]
+    },
+    {
         description: "Hotel",
         requirements: [
             "BEDROOMS"
-        ],
-        requiredInputs:{}
+        ]
     },
     {
         description: "Student Accommodation",
         requirements: [
             "BEDROOMS"
-        ],
-        requiredInputs:{}
+        ]
+    },
+    {
+        description: "Light industry and research and development",
+        requirements: [
+            "GROSS_EXTERN_AREA"
+        ]
     }
 ]
 
