@@ -30,8 +30,12 @@ export const Form = () => {
     }
 
     return (
-        <div>
-            <h2>Select a use class...</h2>
+        <div className="container">
+            <h2>Select a policy</h2>
+            <select>
+                <option>New London Plan Policy T5</option>
+            </select>
+            <h2>Select a land use</h2>
             <form onSubmit={handleSubmit}>
                 <select className="useClassList" value={selectedUseClass} onChange={handleSelect}>
                     {renderedUseClassList}
@@ -60,7 +64,7 @@ export const Form = () => {
                     )
                 })}
                 <br />
-                <button>Add land-use</button>
+                {/*<button>Add land-use</button>*/}
             </form>
             <Calculator useClass={parameterValue} />
         </div>

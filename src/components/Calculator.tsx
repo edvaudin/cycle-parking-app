@@ -1,10 +1,24 @@
 import { render } from '@testing-library/react';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import StoredUseClass from './StoredUseClass'
 
 const Calculator = (props: any) => {
-    //var storedUseClass = localStorage.getItem('useClass');]
-    var longSpaces;
-    var shortSpaces;
+    var storedUseClass = localStorage.getItem('useClass');
+    var storedUseClassParsed = JSON.parse(storedUseClass!);
+    
+    var longSpaces = 0;
+    var shortSpaces = 0;
+    const [ls, setLs] = useState(0);
+    const [ss, setSs] = useState(0);
+
+    useEffect(() => {
+        setLs(longSpaces as number);
+        localStorage.setItem('longSpaces', JSON.stringify(ls))
+    })
+    useEffect(() => {
+        setSs(shortSpaces as number);
+        localStorage.setItem('shortSpaces', JSON.stringify(ss))
+    })
 
     switch (props.useClass.useClass) {
         case "A1 - Food retail": CalculateA1FoodSpaces();
@@ -222,8 +236,9 @@ const Calculator = (props: any) => {
 
     return (
         <div>
-            <h2>Long-stay spaces: {longSpaces}</h2>
-            <h2>Short-stay spaces: {shortSpaces}</h2>
+            <h2>Long-stay spaces: </h2><h2 className="result" >{longSpaces}</h2>
+            <h2>Short-stay spaces: </h2><h2 className="result" >{shortSpaces}</h2>
+            {/*<StoredUseClass storedUseClass={storedUseClassParsed} ls={ls} ss={ss}/>*/}
         </div>
     )
 }

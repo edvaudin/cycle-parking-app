@@ -134,7 +134,7 @@ export const useClassList : UseClass[] = [
 export const reqDescriptions = {
     BEDROOMS : "Number of bedrooms",
     LOCATION : "Is it in central London? (0 for no, 1 for yes)",
-    GROSS_EXTERN_AREA : "Gross External Area",
+    GROSS_EXTERN_AREA : "Gross External Area (square metres)",
     STAFF: "Number of full-time staff",
     STUDIOS: "Number of studio / 1 person 1 bedroom dwellings",
     TWO_PERSON_ONE_BEDROOM: "Number of 2 person 1 bedroom dwellings",

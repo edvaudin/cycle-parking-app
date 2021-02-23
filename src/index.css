@@ -12,6 +12,8 @@ code {
     monospace;
 }
 
+
+
 h1{
   float: left;
   line-height: 70px;
@@ -29,6 +31,16 @@ h2 {
   margin-left: 50px;
 }
 
+.result{
+  font-size: 60px;
+  color: #2b78c0;
+  border-color: #3f87a6;
+  border-style: dashed;
+  width: 60%;
+  padding-left: 30px;
+  box-sizing: border-box;
+}
+
 h3 {
   padding-top: 10px;
   margin: auto;
@@ -42,8 +54,8 @@ header {
   background: linear-gradient(0.25turn, #3f87a6, #135899);
 }
 
-.useClassList{
-  width: 80%;
+select {
+  width: 60%;
   height: 50px;
   margin: auto;
   margin-left: 50px;
@@ -86,8 +98,10 @@ button{
 label{
   margin-left: 50px;
   font-family: 'Sora', sans-serif;
-  
+  display: inline-block;
+  width: 20%;
 }
+
 input {
   height: 25px;
   margin: auto;
@@ -95,6 +109,8 @@ input {
   margin-bottom: 10px;
   margin-left: 50px;
   font-size: 100%;
+  border-radius:10px;
+  border-color: #1d408a;
 }
 ul {
   width: fit-content;
@@ -108,4 +124,24 @@ p {
   margin: auto;
   font-family: 'Sora', sans-serif;
   margin-left: 50px;
+}
+
+table {
+  table-layout: auto;
+  border-collapse: collapse;
+  width: 100%;
+  word-wrap: break-word
+}
+table td {
+  border: 1px solid #ccc;
+}
+table .absorbing-column {
+  width: 100%;
+}
+
+li label, li input {
+  display: inline-block;
+}
+li label {
+  min-width: 80px;
 }
